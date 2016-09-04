@@ -1,0 +1,19 @@
+VERSION: 1.0.0.1
+GPLOAD:
+   INPUT:
+    - SOURCE:
+        FILE: ['/data/landing/cxp/processing/events.tmp']
+    - FORMAT: CSV
+    - DELIMITER: ','
+    - NULL_AS: ''
+    - QUOTE: '"'
+    - HEADER: FALSE
+    - ENCODING: 'UTF8'
+    - ERROR_LIMIT: 100000
+    - ERROR_TABLE: public.err_table
+   OUTPUT:
+    - TABLE: cxp.events
+    - MODE: INSERT
+   PRELOAD:
+    - TRUNCATE: FALSE
+    - REUSE_TABLES: FALSE
